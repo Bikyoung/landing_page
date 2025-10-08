@@ -56,7 +56,8 @@ function recommendSwiper(args) {
             },
             1024: {
                 slidesPerView: 3,
-                slidesPerGroup: 1
+                slidesPerGroup: 1,
+                spaceBetween: 20
             },
             768: {
                 slidesPerView: 2.5,
@@ -64,10 +65,12 @@ function recommendSwiper(args) {
             },
             640: {
                 slidesPerView: 2,
-                slidesPerGroup: 1
+                slidesPerGroup: 1,
+                spaceBetween: 20
             },
             480: {
-                slidesPerView: 1.5
+                slidesPerView: 1.5,
+                spaceBetween: 20
             },
             360: {
                 slidesPerView: 1
