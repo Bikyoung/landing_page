@@ -41,12 +41,10 @@ function recommendSwiper(args) {
         },
 
         breakpoints: {
-            // 화면 너비가 1440px 이상일 때 적용
             1440: {
                 slidesPerView: 4,
                 spaceBetween: 30
             },
-            // slidesPerView에 소수점을 쓸 때 slidesPerGroup을 통해 마지막 카드가 한 번의 슬라이드로 온전히 보이게 함
             1200: {
                 slidesPerView: 3.5,
                 slidesPerGroup: 3,
@@ -92,16 +90,11 @@ tabBtns.forEach((tabBtn) => {
         clearCurrentSelected(tabContents);
         addSelected(tabContents[idx]);
 
-        // Swiper 객체가 중복 생성되지 않도록 기존 Swiper 객체 삭제
         if (recommendSwiperObj) {
             recommendSwiperObj.destroy(true, true);
         }
 
-        // display: none 상태에서는 Swiper가 제대로 초기화되지 않으므로 addSelected() 호출 이후에 Swiper 객체 생성
-
-        console.log("재할당전");
         recommendSwiperObj = recommendSwiper(tabContents[idx]);
-        console.log("재할당후");
     });
 });
 
@@ -138,3 +131,20 @@ storageLabels.forEach((storageLabel) => {
     });
 });
 
+//  ──────────────── review-sec ──────────────── 
+// review-sec에서 사용할 Swiper 인스턴스 생성
+let reviewSwiper = new Swiper(".reviewSwiper", {
+    slidesPerView: "auto",
+    spaceBetween: 20,
+    autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+    },
+    loop: true,
+});
+
+// 해상도 변화 시 맨 앞 슬라이드가 잘려 보이는 것을 방지
+window.addEventListener("resize", () => {
+    reviewSwiper.update();
+    reviewSwiper.slideToLoop(0);
+});

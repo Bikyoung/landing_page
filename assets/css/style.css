@@ -56,6 +56,7 @@
     --space-md: 3rem;
     --space-lg: 6rem;
     --space-xl: 12rem;
+    --space-card-gap: 2.5rem;
     --space-padding-horizontal: 8rem;
     --space-padding-vertical: 12rem;
 
@@ -169,7 +170,9 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: var(--space-card-gap);
     border-radius: 1rem;
+    padding: 3rem 2rem;
 }
 
 .card-tit {
@@ -331,8 +334,6 @@ button {
 
 .recommend-card {
     color: var(--white-color);
-    gap: 2.5rem;
-    padding: 3rem 2.5rem;
 }
 
 .recommend-card.last-card {
@@ -344,7 +345,7 @@ button {
     width: 20rem;
 }
 
-.phone-name {
+.recommend-sec .phone-name {
     padding-top: 1rem;
 }
 
@@ -472,6 +473,47 @@ button {
     margin-top: var(--space-xl);
 }
 
+/* ──────────────── review-sec ──────────────── */
+.reviewSwiper {
+    width: 100%;
+}
+
+.review {
+    width: 27.5rem;
+    padding: 4rem 3rem;
+    position: relative;
+    background-color: #FFF9EF;
+}
+
+.quote-image {
+    width: 3rem;
+    position: absolute;
+    top: 2.5rem;
+    left: 1.5rem;
+}
+
+.review-txt {
+    height: 9rem;
+    color: #565656;
+    font-size: var(--font-size-body-md);
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+}
+
+.stars-image {
+    height: 1.5rem;
+}
+
+.user-name {
+    text-align: center;
+    font-size: var(--font-size-body-lg);
+}
+
+.review-sec .phone-name {
+    font-size: var(--font-size-body-sm);
+    color: var(--dark-gray-color);
+    margin-top: var(--space-xs);
+}
 
 /* ──────────────── break point : 1023px ────────────────*/
 @media (max-width: 1023px) {
@@ -574,10 +616,11 @@ button {
         --font-size-h3: 2rem;
         --font-size-h4: 1.8rem;
         --font-size-card-tit: 1.8rem;
-        --font-size-body-xl: 1.6rem;
-        --font-size-body-lg: 1.4rem;
-        --font-size-body-md: 1.3rem;
-        --font-size-body-sm: 1.2rem;
+        --font-size-body-xl: 1.8rem;
+        --font-size-body-lg: 1.6rem;
+        --font-size-body-md: 1.4rem;
+        --font-size-body-sm: 1.3rem;
+        --font-size-body-xs: 1.2rem;
     }
 
     .container {
@@ -588,8 +631,8 @@ button {
         letter-spacing: 0.04em;
     }
 
-    .sub-cta {
-        font-size: var(--font-size-body-lg);
+    .small-desc {
+        font-size: var(--font-size-body-xs);
     }
 
     /* ──────────────── hero-sec ──────────────── */
@@ -631,12 +674,12 @@ button {
 
     .storage label,
     .before-cost {
-        font-size: var(--font-size-body-md);
         line-height: 1.3;
     }
 
-    .after-cost {
-        font-size: var(--font-size-body-xl);
+    /* ──────────────── review-sec ──────────────── */
+    .review-txt {
+        height: 7.5rem;
     }
 }
 

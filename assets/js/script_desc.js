@@ -31,6 +31,8 @@ function recommendSwiper(args) {
     let swiper = new Swiper(args.querySelector(".recommendSwiper"), {
 
         slidesPerView: 1,
+        // spaceBetween이 적용되지 않는 순간이 있어서 모든 breakpoints에 spaceBetween 속성을 추가
+        spaceBetween: 20,
         /* navigation이나 pagination이 넓은 범위를 가리키면 Swiper가 요소를 올바르게 못 찾을 수 있으므로
            querySelector()를 통해 좁은 범위로 지정 */
         navigation: {
@@ -73,7 +75,8 @@ function recommendSwiper(args) {
                 spaceBetween: 20
             },
             360: {
-                slidesPerView: 1
+                slidesPerView: 1,
+                spaceBetween: 20
             }
         }
     });
@@ -135,4 +138,28 @@ storageLabels.forEach((storageLabel) => {
         afterCostOfCurrentCard.textContent = dataAfterCost;
 
     });
+});
+
+//  ──────────────── review-sec ──────────────── 
+// review-sec에서 사용할 Swiper 인스턴스 생성
+let reviewSwiper = new Swiper(".reviewSwiper", {
+    slidesPerView: 4.2,
+    spaceBetween: 30,
+    autoplay: {
+        delay: 2000,
+        // 사용자가 조작하더라도 autoplay는 계속 유지
+        disableOnInteraction: false,
+    },
+    // 마지막 슬라이드에서 첫 슬라이드로 이어지는 무한 루프 설정 
+    loop: true
+});
+
+/* loop: true + slidesPerView: auto + 슬라이드 너비 고정 조합에서
+   해상도 초기화 시점이나 리사이즈시 Swiper가 슬라이드 배치를 잘못 계산해서 
+   맨 앞 슬라이드가 잘려 보이는 것을 방지 */
+window.addEventListener("resize", () => {
+    // 슬라이드 및 슬라이드 배치 재계산
+    reviewSwiper.update();
+    // 첫 슬라이드로 이동
+    reviewSwiper.slideToLoop(0);
 });
