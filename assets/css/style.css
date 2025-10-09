@@ -515,7 +515,58 @@ button {
     margin-top: var(--space-xs);
 }
 
-/* ──────────────── break point : 1023px ────────────────*/
+/* ──────────────── process-sec ──────────────── */
+.process-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* 줄바꿈 허용 */
+    flex-wrap: wrap;
+}
+
+.process {
+    width: 22rem;
+    gap: 4rem;
+}
+
+.process-tit {
+    color: var(--dark-gray-color);
+}
+
+.process-icon {
+    height: 8rem;
+}
+
+.process-desc {
+    font-size: var(--font-size-body-md);
+    color: var(--white-color);
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: 0.04em;
+}
+
+
+/* ──────────────── break point : 1439px ──────────────── */
+@media (max-width: 1439px) {
+
+    /* ──────────────── process-sec ──────────────── */
+    /* flex-wrap: wrap으로 설정한 후 Flex Container의 너비를 한 번에 줄이고
+       왼쪽 카드는 margin-left: auto, 오른쪽 카드는 margin-right: auto로 지정하여 중앙 정렬 */
+    .process-list {
+        width: 70rem;
+    }
+
+    .process:nth-child(4) {
+        margin: 2rem 1rem 0 auto;
+    }
+
+    /* 수평 방향의 margin에서는 margin-collapse가 적용 X */
+    .process:nth-child(5) {
+        margin: 2rem auto 0 1rem;
+    }
+}
+
+/* ──────────────── break point : 1023px ──────────────── */
 @media (max-width: 1023px) {
 
     /* ──────────────── common ──────────────── */
@@ -635,6 +686,10 @@ button {
         font-size: var(--font-size-body-xs);
     }
 
+    .no-mob {
+        display: none;
+    }
+
     /* ──────────────── hero-sec ──────────────── */
     .hero-main-tit {
         line-height: 1.2;
@@ -681,6 +736,44 @@ button {
     .review-txt {
         height: 7.5rem;
     }
+
+    /* ──────────────── process-sec ──────────────── */
+    .process-list {
+        width: 40rem;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .process {
+        width: 100%;
+        position: relative;
+        /* process-tit, process-desc를 오른쪽으로 위치시킴 */
+        align-items: end;
+        gap: 2rem;
+    }
+
+    .process:nth-child(4),
+    .process:nth-child(5) {
+        margin: 0;
+    }
+
+    .process-icon {
+        width: 20%;
+        height: auto;
+        position: absolute;
+        left: 12%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .process-tit,
+    .process-desc {
+        /* process-icon의 좌우 여백을 같게 하기 위해 12%를 추가로 뺌 */
+        width: calc(100% - (20% + 12% + 12%));
+        text-align: left;
+    }
+
+
 }
 
 /* ──────────────── break point : 479px ────────────────*/
@@ -693,14 +786,8 @@ button {
         --space-xs: 0.4rem;
         /* 8px */
         --space-sm: 0.8rem;
-        /* 14px */
-        --space-md: 1.4rem;
-        /* 28px */
-        --space-lg: 2.8rem;
         /* 28px */
         --space-lg-extra: 2rem;
-        /* 56px */
-        --space-xl: 5.6rem;
         /* 16px */
         --space-padding-horizontal: 1.6rem;
         /* 56px */
@@ -740,4 +827,23 @@ button {
         font-size: var(--font-size-body-xl);
     }
 
+    /* ──────────────── process-sec ──────────────── */
+    .process-list {
+        width: 100%;
+    }
+
+    .process {
+        gap: 1rem;
+    }
+
+    .process-icon {
+        width: 7rem;
+        left: 8%;
+    }
+
+    .process-tit,
+    .process-desc {
+        width: calc(100% - (20% + 8% + 8%));
+        text-align: left;
+    }
 }
