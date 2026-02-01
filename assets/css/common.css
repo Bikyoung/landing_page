@@ -1,0 +1,400 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Pretendard-Bold'),
+        url("../font/Pretendard-Bold.ttf") format('truetype'),
+        url("../font/Pretendard-Bold.woff2") format('woff2') url("../font/Pretendard-Bold.woff") format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Pretendard-SemiBold'),
+        url("../font/Pretendard-SemiBold.ttf") format('truetype'),
+        url("../font/Pretendard-SemiBold.woff2") format('woff2'),
+        url("../font/Pretendard-SemiBold.woff") format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Pretendard-Medium'),
+        url("../font/Pretendard-Medium.ttf") format('truetype'),
+        url("../font/Pretendard-Medium.woff2") format("woff2"),
+        url("../font/Pretendard-Medium.woff") format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Pretendard-Regular'),
+        url("../font/Pretendard-Regular.ttf") format('truetype'),
+        url("../font/Pretendard-Regular.woff2") format('woff2'),
+        url("../font/Pretendard-Regular.woff") format('woff');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+
+:root {
+    /* ──── color ──── */
+    --white-color: #ffffff;
+    --black-color: #121212;
+    --primary-color: #FC8A46;
+    --primary-hover-color: #ff6a14;
+    --brown-color: #5D4037;
+    --gray-color-50: #E0E0E0;
+    --gray-color-100: #adadad;
+    --gray-color-150: #999999;
+    --gray-color-200: #3a3a3a;
+    --yellow-gradient-color: linear-gradient(to bottom, #5E5E5E, #59543A);
+    --light-yellow-color: #FFF3E0;
+
+    /* ──── spacing ──── */
+    --space-xxs: 0.6rem;
+    --space-xs: 0.8rem;
+    --space-sm: 1.5rem;
+    --space-md: 3rem;
+    --space-lg: 6rem;
+    --space-xl: 12rem;
+    --space-card-gap: 2.5rem;
+    --space-padding-horizontal: 8rem;
+    --space-padding-vertical: 12rem;
+
+    /* ──── font-size ──── */
+    --font-size-display: 4.8rem;
+    --font-size-title1: 4.5rem;
+    --font-size-title2: 3rem;
+    --font-size-title3: 2.4rem;
+    --font-size-card-tit: 2.4rem;
+    --font-size-body-xl: 2rem;
+    --font-size-body-lg: 1.8rem;
+    --font-size-body-md: 1.6rem;
+    --font-size-body-sm: 1.4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 1rem을 10px로 설정 */
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--black-color);
+    font-family: "Pretendard";
+}
+
+body.stop-scroll {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+img {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: var(--white-color);
+    display: inline-block;
+}
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+}
+
+button:disabled {
+    cursor: default;
+}
+
+/* 최소 타겟 사이즈 확보 */
+a,
+button {
+    min-width: 4.4rem;
+    min-height: 4.4rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: var(--space-padding-vertical) var(--space-padding-horizontal);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.orange-txt {
+    color: var(--primary-color);
+}
+
+.no-pc {
+    display: none;
+}
+
+.cta {
+    padding: 0.6em 1.4em;
+}
+
+.sub-cta {
+    font-size: var(--font-size-body-md);
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.sub-cta::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    border: 1px solid var(--gray-color-150);
+    border-radius: 50px;
+    transform: scale(0.9);
+    transition: all 0.3s ease-in-out;
+}
+
+.image-box img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.sec-tit {
+    font-size: var(--font-size-title1);
+    font-weight: 700;
+    margin-bottom: var(--space-lg);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-card-gap);
+    border-radius: 1rem;
+    padding: 3rem 2rem;
+}
+
+.card-tit {
+    font-size: var(--font-size-card-tit);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.yellow-gradient-bg {
+    background: var(--yellow-gradient-color);
+    border: 0.5px solid var(--gray-color-150);
+}
+
+.small-desc {
+    color: var(--gray-color-150);
+    font-size: var(--font-size-body-sm);
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    margin-top: var(--space-xl);
+}
+
+/* ──────────────── modal-overlay ──────────────── */
+.modal-overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: none;
+}
+
+/* ──────────────── modal-common ──────────────── */
+.modal {
+    width: clamp(30rem, 16.154rem + 38.462vw, 90rem);
+    max-height: 80vh;
+    overflow: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 80;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.modal > * {
+    padding: 3rem;
+}
+
+.modal-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--white-color);
+    border-radius: 1rem 1rem 0 0;
+    padding-bottom: 2rem;
+}
+
+.modal-title, .fa-x {
+    font-size: var(--font-size-title3);
+    font-weight: 500;
+}
+
+.close-modal {
+    display: flex;
+    justify-content: end;  
+    align-items: center;
+}
+
+.modal-body {
+    background-color: #F0F0F0;
+    border-radius:  0 0 1rem 1rem;
+    font-size: var(--font-size-body-md);
+    color: #808080;
+    line-height: 1.4;
+}
+
+.modal-content:nth-child(1) {
+    margin-bottom: 1.5rem;
+}
+
+/* ──────────────── break point : 1023px ──────────────── */
+@media (max-width: 1023px) {
+
+    /* ──────────────── common ──────────────── */
+    :root {
+        /* ──── spacing ──── */
+        /* 8px */
+        --space-sm: 0.8rem;
+        /* 16px */
+        --space-md: 1.6rem;
+        /* 32px */
+        --space-lg: 3.2rem;
+        /* 64px */
+        --space-xl: 6.4rem;
+        /* 80px */
+        --space-xxl: 8rem;
+        /* 32px */
+        --space-padding-horizontal: 3.2rem;
+        /* 64px */
+        --space-padding-vertical: 6.4rem;
+
+        /* ──── font-size ──── */
+        --font-size-display: 4rem;
+        --font-size-title1: 3.6rem;
+        --font-size-title2: 2.4rem;
+        --font-size-title3: 2.2rem;
+        --font-size-card-tit: 2.2rem;
+        --font-size-body-xl: 2rem;
+        --font-size-body-lg: 1.8rem;
+        --font-size-body-md: 1.6rem;
+        --font-size-body-sm: 1.4rem;
+    }
+
+    .container {
+        max-width: 960px;
+    }
+
+    .only-pc {
+        display: none;
+    }
+
+    .no-pc {
+        display: block;
+    }
+}
+
+/* ──────────────── break point : 767px ────────────────*/
+@media (max-width: 767px) {
+
+    /* ──────────────── common ──────────────── */
+    :root {
+        /* ──── spacing ──── */
+        /* 14px */
+        --space-md: 1.4rem;
+        /* 28px */
+        --space-lg: 2.8rem;
+        /* 56px */
+        --space-xl: 5.6rem;
+        /* 16px */
+        --space-padding-horizontal: 1.6rem;
+        /* 56px */
+        --space-padding-vertical: 5.6rem;
+
+        /* ──── font-size ──── */
+        --font-size-display: 3rem;
+        --font-size-title1: 3rem;
+        --font-size-title2: 2.2rem;
+        --font-size-title3: 2rem;
+        --font-size-card-tit: 1.8rem;
+        --font-size-body-xl: 1.8rem;
+        --font-size-body-lg: 1.6rem;
+        --font-size-body-md: 1.4rem;
+        --font-size-body-sm: 1.3rem;
+        --font-size-body-xs: 1.2rem;
+    }
+
+    .container {
+        max-width: 720px;
+    }
+
+    .card-tit {
+        letter-spacing: 0.04em;
+    }
+
+    .small-desc {
+        font-size: var(--font-size-body-xs);
+    }
+
+    .no-mob {
+        display: none;
+    }
+
+    .only-mob {
+        display: block;
+    }
+}
+
+/* ──────────────── break point : 479px ────────────────*/
+@media (max-width: 479px) {
+
+    /* ──────────────── common ──────────────── */
+    :root {
+        /* ──── spacing ──── */
+        /* 4px */
+        --space-xs: 0.4rem;
+        /* 8px */
+        --space-sm: 0.8rem;
+        /* 28px */
+        --space-lg-extra: 2rem;
+        /* 16px */
+        --space-padding-horizontal: 1.6rem;
+        /* 56px */
+        --space-padding-vertical: 5.6rem;
+
+        /* ──── font-size ──── */
+        --font-size-display: 2.8rem;
+        --font-size-title1: 2.8rem;
+        --font-size-title2: 2.2rem;
+        --font-size-title3: 2rem;
+        --font-size-card-tit: 1.8rem;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 440px;
+    }
+}
