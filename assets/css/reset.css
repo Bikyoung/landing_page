@@ -88,6 +88,11 @@ video {
     vertical-align: baseline
 }
 
+html, body {
+    overflow-x: hidden; /* 가로 스크롤 원천 봉쇄 */
+    width: 100%;        /* vw 대신 % 사용 */
+}
+
 article,
 aside,
 details,
