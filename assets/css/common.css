@@ -401,4 +401,9 @@ button {
         --font-size-title3: 2rem;
         --font-size-card-tit: 1.8rem;
     }
+
+    .container {
+        width: 100%;
+        max-width: 440px;
+    }
 }
