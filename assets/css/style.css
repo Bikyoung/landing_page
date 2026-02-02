@@ -8,6 +8,7 @@ header {
 }
 
 .header-container {
+    width: 100%;
     height: clamp(5rem, 4.308rem + 1.923vw, 8rem);
     display: flex;
     flex-direction: row;
@@ -656,15 +657,6 @@ label {
     margin-bottom: 6rem;
 }
 
-#privacy-check {
-    width: 0.1rem;
-    height: 0.1rem;
-    margin: -0.1rem;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-}
-
 .fa-square-check {
     font-size: var(--font-size-body-sm); ;    
     color: var(--gray-color-100);
@@ -776,6 +768,10 @@ footer p {
     padding: 3rem;
     background-color: var(--white-color);
     border-radius: 1rem;
+}
+
+#validation-modal-title {
+    padding: 0;
 }
 
 .error-msg {

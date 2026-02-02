@@ -88,7 +88,7 @@
                     </li>
                 </ul>
     
-                <button type="button" class="hamburger-btn">
+                <button type="button" class="hamburger-btn" aria-label="메뉴 열기" aria-controls="slide-menu" aria-expanded="false">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </nav>
@@ -1124,7 +1124,7 @@
                         </div>
                         <div class="privacy-group">
                             <div class="check-match">
-                                <input type="checkbox" id="privacy-check">
+                                <input type="checkbox" id="privacy-check" class="no-show">
                                 <label for="privacy-check">
                                     <i class="fa-regular fa-square-check"></i>
                                     개인정보 수집 및 이용 동의
@@ -1178,16 +1178,17 @@
     <div class="modal-overlay"></div>
 
     <!-- validation-modal -->
-    <div class="modal validation-modal">
+    <div class="modal validation-modal" role="dialog" aria-labelledby="validation-modal-title" aria-modal="true">
+        <h3 id="validation-modal-title" class="no-show">문의 사항 입력 오류</h3>
         <p class="error-msg"></p>
         <button type="button" class="close-modal">확인</button>
     </div>
 
     <!-- privacy-modal -->
-    <div class="modal privacy-modal">
+    <div class="modal privacy-modal" role="dialog" aria-labelledby="privacy-modal-title" aria-modal="true">
         <div class="modal-head">
-            <h3 class="modal-title">개인정보 수집 및 이용 동의</h3>
-            <button type="button" class="close-modal">
+            <h3 id="privacy-modal-title" class="modal-title">개인정보 수집 및 이용 동의</h3>
+            <button type="button" class="close-modal" aria-label="창 닫기">
                 <i class="fa-solid fa-x"></i>
             </button>
         </div>
@@ -1206,10 +1207,10 @@
     </div>
 
     <!-- terms-modal -->
-    <div class="modal terms-modal">
+    <div class="modal terms-modal" role="dialog" aria-labelledby="terms-modal-title" aria-modal="true">
         <div class="modal-head">
-            <h3 class="modal-title">이용 약관</h3>
-            <button type="button" class="close-modal">
+            <h3 id="terms-modal-title" class="modal-title">이용 약관</h3>
+            <button type="button" class="close-modal" aria-label="창 닫기">
                 <i class="fa-solid fa-x"></i>
             </button>
         </div>
@@ -1259,7 +1260,7 @@
     </div>
 
     <!-- slide-menu -->
-    <div class="slide-menu">
+    <div id="slide-menu" class="slide-menu">
         <div class="container menu-container">
             <div class="menu-head">
                 <div class="logo">
@@ -1267,7 +1268,7 @@
                         Any<span class="logo-gradient">1</span> Telecom
                     </a>
                 </div>
-                <button type="button" class="close-menu">
+                <button type="button" class="close-menu" aria-label="메뉴 닫기">
                     <i class="fa-solid fa-x"></i>
                 </button>
             </div>

@@ -503,10 +503,12 @@ const slideMenuItemArr = document.querySelectorAll(".slide-menu a");
 
 hamburgerBtn.addEventListener("click", ()=> {
     slideMenu.classList.add("show");
+    hamburgerBtn.setAttribute("aria-expanded", "true");
 });
 
 closeMenu.addEventListener("click", ()=> {
     slideMenu.classList.remove("show");
+    hamburgerBtn.setAttribute("aria-expanded", "false");
 });
 
 slideMenuItemArr.forEach((slideMenuItem) => {

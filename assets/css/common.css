@@ -211,6 +211,15 @@ button {
     margin-top: var(--space-xl);
 }
 
+.no-show {
+    width: 0.1rem;
+    height: 0.1rem;
+    margin: -0.1rem;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;    
+}
+
 /* ──────────────── modal-overlay ──────────────── */
 .modal-overlay {
     width: 100%;
